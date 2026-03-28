@@ -2,6 +2,7 @@
   "name": "ssg-workshop",
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "build": "slidev build",
     "dev": "slidev",

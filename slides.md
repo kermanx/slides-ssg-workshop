@@ -6,6 +6,8 @@ colorSchema: light
 transition: slide-left
 subtitle: Web 开发基础与 VitePress 开发指南
 author: _Kerman@USTCLUG
+touying:
+  footer: kermanx.com/slides-ssg-workshop
 ---
 
 # 现代静态网站构建
@@ -984,9 +986,11 @@ footer: false
 
 theme: [slidev-theme-touying](https://github.com/kermanx/slidev-theme-touying)<br>&nbsp;-- inspired by [Typst Touying](https://touying-typ.github.io/)
 
-<div h-4 />
+<div h-2 />
 
 vitepress-plugin-typst when?
+
+
 
 </div>
 
