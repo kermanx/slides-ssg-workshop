@@ -900,7 +900,7 @@ bun add vitepress-plugin-group-icons
 
 </div><div>
 
-### [iconfiy](https://iconify.design/)
+### [iconify](https://iconify.design/)
 
 - UnoCSS with `preset-icons`
 
