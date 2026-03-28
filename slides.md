@@ -17,6 +17,15 @@ touying:
 layout: outline
 ---
 
+
+<div hidden>
+
+```vue
+
+```
+
+</div>
+
 ---
 
 - Web 的一些基础概念：CSS HTML JS、SPA vs MPA、SSG vs SSR vs CSR
@@ -66,8 +75,6 @@ https://example.com/pageC -----> pageC.html
 
 - 每个页面都有自己的 HTML 文件，用户访问不同的 URL 时会加载不同的页面。
 - 适合内容较多的网站，SEO 友好，但可能会导致页面切换时的加载时间较长。
-
-
 
 ---
 class: p-4
@@ -203,8 +210,6 @@ https://docs.astro.build/en/concepts/islands/
 
 - Fast
 
-- Modern
-
 - Customizable
 
 </div>
@@ -225,16 +230,20 @@ layout: section
 layout: iframe
 title: vitepress.dev
 url: https://vitepress.dev/
-navigation: false
 scale: 0.65
+navigation: false
+footer: false
+hideInToc: true
 ---
 
 ---
 layout: iframe
 title: kermanx.com
 url: https://kermanx.com/
-navigation: false
 scale: 0.65
+navigation: false
+footer: false
+hideInToc: true
 ---
 
 
@@ -242,8 +251,10 @@ scale: 0.65
 layout: iframe
 title: nolebase.ayaka.io
 url: https://nolebase.ayaka.io/
-navigation: false
 scale: 0.65
+navigation: false
+footer: false
+hideInToc: true
 ---
 
 ---
@@ -409,6 +420,8 @@ hide: true
 `.vitepress/config.ts`
 
 ```ts
+import { defineConfig } from "vitepress"
+
 export default defineConfig({
   title: "My Website",
   description: "This is a random website.",
@@ -423,7 +436,7 @@ export default defineConfig({
 
 `index.md`
 
-```md
+```yaml
 ---
 layout: home
 
@@ -443,9 +456,10 @@ features:
 
 ---
 routeAlias: sidebar-and-nav
+title: 配置侧边栏与导航栏
 ---
 
-## 配置侧边栏与导航栏
+## 配置侧边栏与导航栏  <span text-lg font-normal float-right text-black mr-2 mt-1>https://vitepress.dev/reference/site-config</span>
 
 <table class="text-0.8em border-none!">
 <thead>
@@ -456,7 +470,7 @@ routeAlias: sidebar-and-nav
 <td>导航栏配置</td>
 <td>
 
-```ts {*}{class:'w-125!'}
+```ts {*}{class:'w-125! ml-12!'}
 nav: [
   { text: "首页", link: "/" },
   { text: "指南", link: "/guide/" }
@@ -470,7 +484,7 @@ nav: [
 <td>侧边栏配置</td>
 <td>
 
-```ts {*}{class:'w-125!'}
+```ts {*}{class:'w-125! ml-12!'}
 sidebar: {
   "/guide/": [
     { text: "快速开始", link: "/guide/quick-start" },
@@ -486,7 +500,7 @@ sidebar: {
 <td>社交链接</td>
 <td>
 
-```ts {*}{class:'w-125!'}
+```ts {*}{class:'w-125! ml-12!'}
 socialLinks: [
   { icon: "github", link: "https://github.com/your-id" },
   { icon: "twitter", link: "https://x.com/your-id" }
@@ -497,8 +511,6 @@ socialLinks: [
 </tr>
 </tbody>
 </table>
-
-https://vitepress.dev/reference/site-config
 
 <style>
 pre {
@@ -519,7 +531,7 @@ pre {
 ````md
 ---
 title:   Docs with VitePress # optional
-layout:  doc  # doc | home | page
+layout:  doc # doc | home | page
 outline: [2, 4]
 navbar:  false
 sidebar: false
@@ -634,35 +646,12 @@ button { font-weight: bold; }
 </style>
 ````
 
+
 ---
 layout: section
 ---
 
 # 部署站点
-
----
-
-# GitHub Pages
-
-- 适合个人项目，免费，简单
-
-- 域名：
-  
-  <div font-mono>
-
-    github.com/kermanx/my-blog -> kermanx.github.io/my-blog
-
-    github.com/kermanx/**kermanx.github.io** -> kermanx.github.io
-
-    (CNAME) -> 任意域名
-
-  </div>
-
-- 部署方式：
-  
-  - 将构建后的静态文件推送到 `gh-pages` 分支
-
-  - **使用 GitHub Actions 自动部署 (CI)**
 
 ---
 
@@ -691,6 +680,30 @@ pnpm docs:build   # vitepress build
 - 比如可以将一个 PDF 文件放在 `public/` 中，然后在 Markdown 中通过 `/file.pdf` 来访问它。
 
 - 但是如果 `base` 是 `/sub-path/`，那么访问路径应该是 `/sub-path/file.pdf` 😭
+
+---
+
+# GitHub Pages
+
+- 适合个人项目，免费，简单
+
+- 域名：
+  
+  <div font-mono>
+
+    github.com/kermanx/my-blog -> kermanx.github.io/my-blog
+
+    github.com/kermanx/**kermanx.github.io** -> kermanx.github.io
+
+    (CNAME) -> 任意域名
+
+  </div>
+
+- 部署方式：
+  
+  - 将构建后的静态文件推送到 `gh-pages` 分支
+
+  - **使用 GitHub Actions 自动部署 (CI)**
 
 ---
 
@@ -885,6 +898,16 @@ bun add vitepress-plugin-group-icons
 ```
 :::
 
+</div><div>
+
+### [iconfiy](https://iconify.design/)
+
+- UnoCSS with `preset-icons`
+
+- 在 https://icones.js.org/ 上搜索图标
+
+- `<span class="i-logos-github" />`
+
 </div>
 
 <del float-right mt-16 op-40 text-md>这些 Slidev 都内置了</del>
@@ -893,12 +916,13 @@ bun add vitepress-plugin-group-icons
 
 
 ---
+footer: false
+title: Nolebase Integrations
+---
 
-<span float-right mt-2>https://nolebase-integrations.ayaka.io/</span>
+## Nolebase Integrations <span text-lg font-normal>https://nolebase-integrations.ayaka.io/</span>
 
-## Nolebase Integrations
-
-<iframe src="https://nolebase-integrations.ayaka.io/pages/en/integrations/#integrations-list" border="0" width="100%" height="446px"></iframe>
+<iframe src="https://nolebase-integrations.ayaka.io/pages/en/integrations/#integrations-list" border="0" width="100%" height="450px"></iframe>
 
 ---
 
@@ -947,6 +971,74 @@ _核心诉求：“访客在页面上具体做了什么？”_
 
 - 另外，站点仓库中往往会有很多代码文件，它们需要单独处理。
 
+
+---
+
+## 字体
+
+个人感觉字体能显著提升博客的质感，这里提供一种简单的方案：（模板里已经配置好了）
+
+1. 添加 `.vitepress/theme/index.ts` 文件，内容如下：
+
+  ```ts
+  import type { Theme } from 'vitepress'
+  import DefaultTheme from 'vitepress/theme'
+  import './style.css'
+  export default {
+    extends: DefaultTheme,
+    enhanceApp() { }
+  } satisfies Theme
+  ```
+
+2. 在同一目录下创建 `style.css`，并添加以下内容：
+
+  ```css
+  @import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc@5.1.1/index.min.css");
+  @import url("https://cdn.jsdelivr.net/npm/@fontsource-variable/source-serif-4@5/index.min.css");
+  ```
+
+
+---
+
+## OpenGraph
+
+<Tweet id="1961808312187654211" absolute right-12 mt--6 />
+
+- 动态生成：[@nolebase/vitepress-plugin-og-image](https://npmx.dev/package/@nolebase/vitepress-plugin-og-image)
+
+- 或者静态指定：
+
+  ```ts {*}{class:'w-142!'}
+  default export defineConfig({
+    head: [
+      ["meta",{property:"og:title",content:"My Website"}],
+      ["meta",{property:"og:description",content:"A random website."}],
+      ["meta",{property:"og:image",content:"/og-image.png"}],
+    ],
+  })
+  ```
+
+  ```md {*}{class:'w-142!'}
+  ---
+  head:
+    - ["meta",{property:"og:title",content:"My Page Title"}]
+    - ["meta",{property:"og:description",content:"My Page Description"}]
+    - ["meta",{property:"og:image",content:"/path/to/image.png"}]
+  ---
+  ```
+
+<style scoped>
+pre {
+  --slidev-code-font-size: 0.66em;
+}
+</style>
+
+---
+
+## 图床
+
+我也不知道怎么办。我知道一个歪门邪道的办法，但是不太好。所以干脆不处理了。
+
 ---
 
 ## Markdown misc.
@@ -994,7 +1086,7 @@ vitepress-plugin-typst when?
 
 </div>
 
-<div v-drag="[690,94,198,358]">
+<div v-drag="[678,94,198,358]">
 
 ## 活动反馈问卷
 
@@ -1002,4 +1094,4 @@ vitepress-plugin-typst when?
 
 </div>
 
-<img src="./assets/1774673439498.jpg" v-drag="[385,57,232,NaN]" />
+<img src="./assets/1774673439498.jpg" v-drag="[376,57,232,NaN]" />

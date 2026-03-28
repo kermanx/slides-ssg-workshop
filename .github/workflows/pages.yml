@@ -1,57 +1,53 @@
-name: Deploy to Pages
+name: Deploy pages
 
 on:
-  push:
-    branches: ["main"]
   workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          fetch-depth: 0  # https://vitepress.dev/reference/default-theme-last-updated#last-updated
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: pnpm
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+          node-version: 'lts/*'
+
+      - name: Setup @antfu/ni
+        run: npm i -g @antfu/ni
+
       - name: Install dependencies
-        run: pnpm i
-      - name: Build site
-        run: |
-          if [[ "${{ github.event.repository.name }}" == *".github.io" ]]; then
-            pnpm build --base /
-          else
-            pnpm build --base /${{ github.event.repository.name }}/
-          fi
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        run: nci
+
+      - name: Build
+        run: nr build --base /${{github.event.repository.name}}/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.vitepress/dist
+          path: dist
 
   deploy:
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

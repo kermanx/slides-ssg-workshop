@@ -18,8 +18,8 @@ importers:
         specifier: latest
         version: 0.25.0
       slidev-theme-touying:
-        specifier: ^0.1.9
-        version: 0.1.9(vue@3.5.30(typescript@5.9.3))
+        specifier: ^0.1.10
+        version: 0.1.10(vue@3.5.30(typescript@5.9.3))
       vue:
         specifier: ^3.5.29
         version: 3.5.30(typescript@5.9.3)
@@ -800,12 +800,12 @@ packages:
         optional: true
 
   '@slidev/client@https://pkg.pr.new/slidevjs/slidev/@slidev/client@b445334':
-    resolution: {integrity: sha512-fKuRbJ/uL9oT/VxZ/FYEjLUJMqLBrwAcdbwR7hwlnPisMhD2oIQC+1Xqtt4VPgZ4kise+ZOZJnMYM8DcsgakZQ==, tarball: https://pkg.pr.new/slidevjs/slidev/@slidev/client@b445334}
+    resolution: {tarball: https://pkg.pr.new/slidevjs/slidev/@slidev/client@b445334}
     version: 52.14.1
     engines: {node: '>=18.0.0'}
 
   '@slidev/parser@https://pkg.pr.new/slidevjs/slidev/@slidev/parser@b445334':
-    resolution: {integrity: sha512-QMjhL6KptwoCkSx4qMFIjPRLsA3crFKv6RKw83Ek2unEYiGmR+qWAnLyyYgbRk3hLaiI0bvs/UCMGiVV8n7ahw==, tarball: https://pkg.pr.new/slidevjs/slidev/@slidev/parser@b445334}
+    resolution: {tarball: https://pkg.pr.new/slidevjs/slidev/@slidev/parser@b445334}
     version: 52.14.1
     engines: {node: '>=18.0.0'}
 
@@ -825,7 +825,7 @@ packages:
     engines: {node: '>=18.0.0'}
 
   '@slidev/types@https://pkg.pr.new/slidevjs/slidev/@slidev/types@b445334':
-    resolution: {integrity: sha512-r2463YBUIcKfdnr9Sgqw1JIaGLt6MFklvV9T3SOQWWFsVa4TAyTDGiEzgRKzzWpKtWivFSsdN41kk+jyodAOvA==, tarball: https://pkg.pr.new/slidevjs/slidev/@slidev/types@b445334}
+    resolution: {tarball: https://pkg.pr.new/slidevjs/slidev/@slidev/types@b445334}
     version: 52.14.1
     engines: {node: '>=18.0.0'}
 
@@ -2453,8 +2453,8 @@ packages:
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
-  slidev-theme-touying@0.1.9:
-    resolution: {integrity: sha512-zUtbOs6m/CUl1dCKuUDpX5prbfrmDvweyyq+CJF9b39O4nD+S8mc7x1cUvb1khykj8qkdh9cqAyz+qsxA6Ctqg==}
+  slidev-theme-touying@0.1.10:
+    resolution: {integrity: sha512-tJbOoFgmnNoRvXIX9mngmKwQzGTfG/O+oFn39KMTQ2w/rbRDqabAP4T2OnIMy/5bxuQAE+U7QK+3UNbDFQbgHw==}
     engines: {slidev: '>=0.52.0'}
 
   source-map-js@1.2.1:
@@ -5763,7 +5763,7 @@ snapshots:
 
   sisteransi@1.0.5: {}
 
-  slidev-theme-touying@0.1.9(vue@3.5.30(typescript@5.9.3)):
+  slidev-theme-touying@0.1.10(vue@3.5.30(typescript@5.9.3)):
     dependencies:
       '@antfu/utils': 9.3.0
       '@fontsource/libertinus-serif': 5.2.1
