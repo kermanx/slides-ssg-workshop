@@ -27,6 +27,8 @@ layout: outline
 </div>
 
 ---
+hide: true
+---
 
 - Web 的一些基础概念：CSS HTML JS、SPA vs MPA、SSG vs SSR vs CSR
 - 一些博客生成框架的简略介绍（Jekyll Hexo Hugo Astro）
